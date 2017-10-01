@@ -2,6 +2,8 @@ const query = (query_string, debug) => new Promise((resolve, reject) => {
 	if(!query_string){
 		throw new Error("Klaida. Nepaduota SQL užklausa.")
 	}
+
+	
 	$.ajax({
 		url: "/php/json/query.php",
 		type: "POST",
@@ -22,9 +24,14 @@ const query = (query_string, debug) => new Promise((resolve, reject) => {
 
 function debug(query_string){
 	query(query_string).then(php => {
-		var debugWin = $(`<pre class="card"><div class="card-block">${JSON.stringify(php.data, null, 4)}</div></pre>`);
+		var fragment = document.createDocumentFragment();
 
-		document.getElementsByTagName("body")[0].appendChild(debugWin);
+		var debugWindow = document.createElement('pre');
+		
+		debugWindow.innerHTML = `<div class="card-block">${JSON.stringify(php.data, null, 4)}</div>`;
+		fragment.appendChild(debugWindow);
+
+		document.body.insertBefore(fragment);
 		console.log("Debug:", php);
 	});
 }
