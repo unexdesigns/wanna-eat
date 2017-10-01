@@ -1,32 +1,3 @@
-/*
-function query(query_string, callback, debug) {
-	if(!query_string){
-		return;
-	}
-
-	
-	$.ajax({
-		url: "/php/json/query.php",
-		type: "POST",
-		data: {
-			query: query_string
-		},
-		success: function(php){ 
-			if (debug === true) {
-				console.log('Debug:', php);
-			}
- 
-			if(typeof callback === "function"){
-				callback(php);
-			}
-		},
-		error: function(php){
-			console.error(php);
-		}
-	});
-}
-*/
-
 const query = (query_string, debug) => new Promise((resolve, reject) => {
 	if(!query_string){
 		throw new Error("Klaida. Nepaduota SQL užklausa.")
@@ -52,8 +23,8 @@ const query = (query_string, debug) => new Promise((resolve, reject) => {
 function debug(query_string){
 	query(query_string).then(php => {
 		var debugWin = $(`<pre class="card"><div class="card-block">${JSON.stringify(php.data, null, 4)}</div></pre>`);
-	
-		$("body").prepend(debugWin);
+
+		document.getElementsByTagName("body")[0].appendChild(debugWin);
 		console.log("Debug:", php);
 	});
 }
@@ -66,7 +37,7 @@ function handleClick(event){
 			html = `
 				<section class="recipes">
 			`;
-			
+
 			response.data.forEach(function(el) {
 				html += `
 				<article class="recipe">
@@ -101,5 +72,3 @@ function handleClick(event){
 		console.error("SQL Klaida.", error);
 	});
 }
-
-console.log(this, self);

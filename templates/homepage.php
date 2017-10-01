@@ -13,7 +13,7 @@
 				<input class="form-control mb-2" id="query_string" value="SELECT * FROM Recipes">
 				<hr />
 				<div class="text-right">
-					<a  href="javascript;;" class="btn btn-primary" onclick='handleClick(event);'>Siųsti užklausą</a>
+					<a  href="javascript:;" class="btn btn-primary" onclick="handleClick(event)">Siųsti užklausą</a>
 				</div>
 				<h4>Atsakymas</h4>
 				<div id="response"></div>
