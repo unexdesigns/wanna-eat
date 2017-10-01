@@ -1,0 +1,64 @@
+@import "mixins";
+@import "addons/color";
+@import "addons/bootstrap4/variables";
+@import "addons/bootstrap4/mixins";
+@import "addons/bootstrap4/custom";
+@import "addons/bootstrap4/bootstrap";
+
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	background-color: matcolor("grey", "darken-4");
+}
+
+.recipe{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	img{
+		border-radius: $border-radius;
+	}
+	& + &{
+		border-top: 1px solid $di;
+	}
+
+	@include headings{
+		margin: 0;
+	}
+
+	&-secondary{
+		color: text(secondary);
+		font-size: $font-size-sm;
+		.material-icons{
+			font-size: 18px;
+			vertical-align: middle;
+		}
+	}
+
+	.description{
+		margin-bottom: 0.5rem;
+		max-height: $font-size-base*$line-height-base*2;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		display: -webkit-box;
+	}
+
+	.difficulty{
+		&[data-difficulty="1"]{
+			&:after{ content: 'Lengvas'; }
+			.material-icons:before{ content: 'brightness_low'; }
+		}
+		&[data-difficulty="2"]{
+			&:after{ content: 'Vidutinis'; }
+			.material-icons:before{ content: 'brightness_medium'; }
+		}
+		&[data-difficulty="3"]{
+			&:after { content: "Sunkus"};
+			.material-icons:before{ content: 'brightness_high'; }
+		}
+	}
+}
