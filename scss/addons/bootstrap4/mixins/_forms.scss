@@ -45,10 +45,12 @@
 @mixin form-control-focus() {
   &:focus {
     color: $input-color-focus;
-    background-color: $input-bg-focus;
-    border-color: $input-border-focus;
+    // background-color: $input-bg-focus;
+    // border-color: $input-border-focus;
+    border-bottom-color: $input-border-focus;
+    box-shadow: 0 1px 0 0 $input-border-focus;
     outline: none;
-    @include box-shadow($input-box-shadow-focus);
+    // @include box-shadow($input-box-shadow-focus);
   }
 }
 

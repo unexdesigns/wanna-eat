@@ -1,13 +1,7 @@
-{include file="{$smarty.current_dir}/header.tpl"}
+{include file="{$smarty.current_dir}/core/_header.tpl"}
+{* {include file="{$smarty.current_dir}/_nav.tpl"} *}
 
-{$test = [
-    "a" => "a",
-    "b" => "b"
-]}
-
-<div class="card">
-    {debug}
-</div>
+{include file="{$smarty.current_dir}/_login.tpl"}
 
 
-{include file="{$smarty.current_dir}/footer.tpl"}
+{include file="{$smarty.current_dir}/core/_footer.tpl"}

@@ -94,14 +94,14 @@
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
 $black:  #000 !default;
-$red:    #d9534f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
-$teal:   #5bc0de !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+$red:    m-color("red", "base") !default;
+$orange: m-color("orange", "base") !default;
+$yellow: m-color("yellow", "base") !default;
+$green:  m-color("green", "base") !default;
+$blue:   m-color("blue", "base") !default;
+$teal:   m-color("teal", "base") !default;
+$pink:   m-color("pink", "base") !default;
+$purple: m-color("purple", "base") !default;
 
 // Create grayscale
 $gray-dark:                 #292b2c !default;
@@ -111,7 +111,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             $orange !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -125,9 +125,9 @@ $brand-inverse:             $gray-dark !default;
 
 $enable-rounded:            true !default;
 $enable-shadows:            true !default;
-$enable-gradients:          false !default;
+$enable-gradients:          true !default;
 $enable-transitions:        true !default;
-$enable-hover-media-query:  false !default;
+$enable-hover-media-query:  true !default;
 $enable-grid-classes:       true !default;
 $enable-print-styles:       true !default;
 
@@ -289,7 +289,7 @@ $lead-font-weight: 300 !default;
 
 $small-font-size: 80% !default;
 
-$text-muted: $gray-light !default;
+$text-muted: text(secondary) !default;
 
 $abbr-border-color: $gray-light !default;
 
@@ -430,10 +430,10 @@ $input-border-radius-sm:         $border-radius-sm !default;
 
 $input-bg-focus:                 $input-bg !default;
 $input-border-focus:             lighten($brand-primary, 25%) !default;
-$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6) !default;
+$input-box-shadow-focus:         $input-box-shadow, 0 0 0 2px rgba($input-border-focus, .6) !default;
 $input-color-focus:              $input-color !default;
 
-$input-color-placeholder:        $gray-light !default;
+$input-color-placeholder:        rgba(#000, .42) !default;
 
 $input-padding-x-sm:             .5rem !default;
 $input-padding-y-sm:             .25rem !default;

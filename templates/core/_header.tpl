@@ -6,6 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Document</title>
 
-	{include file="{$smarty.current_dir}/styles.tpl"}	
+	{include file="{$smarty.current_dir}/_styles.tpl"}
 </head>
-<body>	
+<body>

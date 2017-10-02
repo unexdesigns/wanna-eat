@@ -436,7 +436,7 @@ $di2w: double($diw);
 $di3w: double($di2w);
 $di4w: double($di3w);
 
-@function matcolor($color, $type) {
+@function m-color($color, $type) {
   @if map-has-key($material-colors, $color) {
     $curr_color: map-get($material-colors, $color);
     @if map-has-key($curr_color, $type) {
